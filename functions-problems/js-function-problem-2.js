@@ -1,53 +1,76 @@
-/*Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string.*/
+/*
 
-/*Write a function that accepts a string as a parameter, and counts the number of vowels in the string.
+Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string.
 
-Step 1. We define a variable (called str) to represent our string, which is also provided.
 
-  let str = "I just got a job as a Web Developer!";
+STEP 1. We declare a function (named findVowelCount) into which we will pass a string (named str).
 
-Step 2.  We create an array called (myLetters), by using the .split method on str, and passing NO space between the quotation marks, so that it create an array by splitting the string into individual letters.
+  function findVowelCount(str){
 
-  const myLetters = str.split("");
 
-Step 3. We create a variable, called vowelCount, which is given an initial value of 0.  
+STEP 2. We create an array, (named vowels) which defines what vowels are (for example, if we wanted to include y and w as vowels, we would do so here).
+
+  const vowels = ["a", "e", "i", "o", "u"];
+
+
+STEP 3. We create a variable, called vowelCount, which is given an initial value of 0.  
 
   let vowelCount = 0;
 
-Step 4.  We write a for loop to loop through the array.
+STEP 4. We create a variable (named myLetters) which converts the string into lowercase, and then split it (into individual characters, 
+because we have provided NO space between the quotation marks). 
+
+  const myLetters = str.toLowerCase().split("");
+
+We also could have bypassed the toLowerCase method, 
+if we would have declared the "vowels" variable thusly; const vowels = ["a", "e", "i", "o", "u", "A", "E", "I","O","U"]; 
+
+  
+
+STEP 5.  We write a for loop to loop through the array, starting at index position 0, and looping through, one index position at a time.
 
   for (var i = 0; i <= string.length - 1; i++) {
 
-Step 5. In our for loop, we include the conditions to return the count of 
- vowels, which will be a variable named vowelCount. 
+STEP 6. In our for loop, we include the conditions to return the count of 
+ vowels (which will be our variable named vowelCount). We use the .includes method to examine whether the myLetters array 
+ includes any of the "vowels" that we defined in STEP 2.  For each instance of a "vowel" in the array, we define that vowelCount will increase by 1.
 
-  if (str.charAt(i) == "a" || str.charAt(i) == "e" || str.charAt(i) == "i" || 
-  str.charAt(i) == "o" || str.charAt(i) == "u") {
-      vowelCount += 1;
+
+  if (vowels.includes(myLetters[i])){
+      vowelCount+= 1;
     }
-   }
 
-Step 6.  We log vowelCount to the console to check our answer. 
+STEP 6.  We include that the function return vowelCount.
+
+  return vowelCount;
+
+STEP 7.  We log vowelCount to the console to confirm our output. 
 
   console.log(vowelCount);
 
-  SOLUTION BELOW*/
+  
+SOLUTION BELOW
 
-let str = "I just got a job as a Web Developer!";
-const myLetters = str.split("");
+*/
+
+
+
+function findVowelCount(str){
+const vowels = ["a", "e", "i", "o", "u"];
 let vowelCount = 0;
 
+const myLetters = str.toLowerCase().split("");
+
+  for (let i = 0; i < myLetters.length; i++) {
+
+    if (vowels.includes(myLetters[i])){
+      vowelCount+= 1;
+    }
+  };
+ return vowelCount;
+}
+console.log(findVowelCount("How many vowels are there in this statement?"));
+
+/* Returns 13 */
 
  
-  for (var i = 0; i <= str.length - 1; i++) {
-
-    if (str.charAt(i) == "a" || str.charAt(i) == "e" || str.charAt(i) == "i" || str.charAt(i) == "o" || str.charAt(i) == "u") {
-      vowelCount += 1;
-    }
-  }
- console.log(vowelCount);
-
-  /* If you want to include "y" and "w" in your loop, the if statement would be as follows:   if (str.charAt(i) == "a" ||
-  str.charAt(i) == "e" || str.charAt(i) == "i" || str.charAt(i) == "o" || str.charAt(i) == "u") {
-      vowelCount += 1; 
-   */
