@@ -45,8 +45,8 @@ SOLUTION BELOW
 
 function char_count(str, letter) 
 {
- var letter_Count = 0;
- for (var position = 0; position < str.length; position++) 
+ let letter_Count = 0;
+ for (let position = 0; position < str.length; position++) 
  {
     if (str.charAt(position) == letter) 
       {
