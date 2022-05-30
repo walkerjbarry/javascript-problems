@@ -1,9 +1,5 @@
 
-<!-- Create an HTML page with a button and a P element with a link inside.
-
-Then, write a JavaScript function to get the HREF attribute of the link when you click the button.
-
-SOLUTION BELOW-->
+<!-- Create an HTML page with a button and a dropdown list with three items in it, then write a JavaScript function that displays the number of items and displays the item in the list when you select from the dropdown. /!-->
 
 
 <!DOCTYPE html>
@@ -13,17 +9,42 @@ SOLUTION BELOW-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>DOM Problem 3</title>
 	</head>
-<body> 
-<div>
- 	<div>
- 	 	<p> <a id="problem" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="https://www.imdb.com/title/tt2575988/?ref_=fn_al_tt_1">Get HREF</a> </p>
-		<button onclick="getAttributes()">Click here to get the HREF of the link above</button> 		
-</body> 
-<script> 
-	function getAttributes() {
-		 var u = document.getElementById("problem").href;
-		 alert('The value of the href attribute of the link is : '+u); 
-	}
-</script>
-</html>
 
+<body> 
+	<div>
+        <!--Create an HTML page with a button and a dropdown list with three items in it/!-->
+     	<p>Choose an Item</p>
+     		<select id="items" onchange="getItems()">
+     				<option value="Keys">Keys</option>
+     				<option value="Wallet">Wallet</option>
+     				<option value="Phone">Phone</option>
+     		
+            </select>
+        </p>
+        <p id="p1"></p>
+	</div>	
+
+<script> //write a JavaScript function that displays the number of items
+    function getItems(){
+         const myItems = document.getElementById("items");
+         
+         const numOfItems = document.getElementById("items").length;
+         console.log(numOfItems);  
+
+         
+         //JavaScript function that displays the item in the list when you select from the dropdown
+         const selectedItem = myItems.options[myItems.selectedIndex].value;
+         let stringOfOptions = "";
+
+         for (let i < 0, i < myItems.length; i++) {
+            stringOfOptions = stringOfOptions + myItems.options[i].text + ", ";        
+         }
+
+         document.getElementById("p1").innerHTML = stringOfOptions 
+         //this (p1) is the element where we store our value (the selected item from the dropdown)
+    }
+</script>
+
+</body> 
+
+</html>
