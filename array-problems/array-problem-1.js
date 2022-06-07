@@ -1,5 +1,4 @@
 /*Write a JavaScript function that takes in two parameters, an array and a number (n), and return the first n elements of that array.
-
 Example: If I pass in an array and the number 2, your function returns the first 2 elements in that array.*/
 
 
@@ -25,8 +24,6 @@ const getMenu = function(array,num){
 	if(num>array.length) 														/*this confirms number doesn't 
 																				exceed number of items in array*/
 		return "There are only " + array.length + "items.  Please try again."
-	return array.slice(0, num); 												/*This is the desired action, upon valid inputs: 
-																				the array is sliced into a new array depending
-	 																			on the number input, and returned.*/
-}
-
+	return array.slice(array,num); 	
+};
+console.log(getMenu(memorialDayFoods, 4));
