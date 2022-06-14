@@ -5,7 +5,7 @@ and returns the sorted version of that array, greatest to least.
 
 //First we declare our function with which we will sort our array. 
 
-function myHighestToLowest(a, b) {  
+function myHighestToLowest(a, b) {
   if (a > b) return 1;  
   if (a == b) return 0;
   if (a < b) return -1;
